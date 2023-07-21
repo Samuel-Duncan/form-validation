@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="content">
+    <div class="picture">
+      <div class="logo">
+        <img src="sign-up-form-images/Emblem-Tree-Logo.png" alt="logo" class="tree"/>
+        <h1 class="omale">The Birch Room</h1>
+      </div>
+    </div>
+    <div class="right">
+      <div class="dummy-text left">
+        <p>
+          We can decide what we want to put here! Lorem ipsum dolor sit amet
+          consectetur, adipisicing elit. Necessitatibus, commodi!
+        </p>
+        <p>Sign up <em>now</em> to get started.</p>
+        <p class="remote-text">You <em>know</em> you want to.</p>
+      </div>
+      <form action="#" novalidate>
+        <div class="form left">
+          <p class="form-title">Sign Up</p>
+          <div class="input">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required />
+          </div>
+
+          <div class="input">
+            <label for="zip">ZIP</label>
+            <input type="text" name="zip" id="zip" maxlength="5" pattern="[0-9]{5}" required/>
+            <p class="error" id="zipError" aria-live="polite"></p>
+          </div>
+
+          <div class="input">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" minlength="8" required />
+            <p class="error" id="emailError" aria-live="polite"></p>
+          </div>
+
+          <div class="input">
+            <label for="phone">Phone number</label>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              minlength="10"
+              maxlength="10"
+              pattern="[0-9]{10}"
+              required
+            />
+            <p id="phoneError" class="error"></p>
+          </div>
+
+          <div class="input">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" minlength="8" pattern="(?=.*\d)(?=.*[A-Z])(?=.*\W).{8,}" required />
+            <p class="error" id="passwordError" aria-live="polite"></p>
+          </div>
+
+          <div class="input">
+            <label for="confirmPassword">Confirm password</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              required
+            />
+            <p class="error" id="confirmPasswordError" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="left button">
+          <button type="submit">Create Account</button>
+        </div>
+      </form>
+      <div class="log-in left">
+        <p>Already have an account?</p>
+        <a href="#">Log in</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

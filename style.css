@@ -1,0 +1,230 @@
+:root{
+  --color: #486d4a;
+  --txt: rgb(185, 185, 185)
+  --font: rgb(255, 255, 255);
+}
+
+* {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  width: 100vw;
+  height: 100vh;
+}
+
+.content,
+.logo {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.picture {
+  background-image: url(sign-up-form-images/pexels-enric-cruz-lópez-6039237.jpg);
+  background-position: 53%;
+  background-size: auto;
+  background-repeat: no-repeat;
+  width: 40vw;
+}
+
+.logo {
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  top: 32vh;
+  padding: 15px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  gap: 20px;
+}
+
+.right {
+  width: 60vw;
+  background-color: #000000;
+  color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.left {
+  padding-left: 4vw;
+}
+
+.dummy-text {
+  font-weight: 500;
+  width: 90%;
+  font-size: 1.5rem;
+}
+
+.remote-text{
+  margin: 40px 0 80px;
+}
+
+.form {
+  box-shadow: 0 10px 20px -2px rgb(22, 22, 22);
+  display: flex;
+  flex-flow: row wrap;
+  gap: 25px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.input {
+  display: flex;
+  flex-flow: column wrap;
+  width: 40%;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.form-title{
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+input {
+  background-color: rgb(2, 2, 2);
+  border: 1px solid rgb(77, 77, 77);
+  border-radius: 3px;
+  color: white;
+  height: 1.5rem;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid var(--color);
+  box-shadow: 0 7px 10px -2px rgb(48, 48, 48);
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  font-weight: 700;
+  font-size: 1.3em;
+  border: 2px solid var(--color);
+  border-radius: 5px;
+  padding: 10px 40px;
+  margin: 40px 0;
+}
+
+button:hover {
+  background-color: var(--color);
+  color: white; 
+}
+
+.log-in{
+  display: flex;
+  gap: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color);
+  font-weight: 700;
+}
+
+a:hover {
+  color: white;
+}
+
+input:invalid {
+
+}
+
+input:focus:invalid {
+  border-color: red;
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:valid {
+  box-shadow: 0 0 5px 1px rgb(0, 255, 72);
+}
+
+.error {
+  width: 100%;
+  padding: 0;
+
+  font-size: 80%;
+  color: red;
+  border-radius: 0 0 5px 5px;
+
+  box-sizing: border-box;
+}
+
+.error.active {
+  padding: 0.3em;
+}
+
+p {
+  display: block;
+}
+
+@media only screen and (max-width: 600px)  {
+  .content{
+      flex-flow: column;
+      height: auto;
+      text-align: center;
+  }
+  .picture{
+      width: 100vw;
+      height: 15vh;
+      display: flex;
+      background-size: 100vw;
+  }
+  .logo{
+      width: 100vw;
+      position: static;
+      gap: 10px;
+  }
+  .right{
+      width: auto;
+      height: auto;
+  }
+  .dummy-text{
+      width: auto;
+      margin-top: 30px;
+
+  }
+  .left{
+      padding: 10px 20px;
+  }
+  .remote-text{
+      padding: 20px 0;
+      margin: 0;
+  }
+  .form{
+      flex-flow: column nowrap;
+      align-items: center;
+  }
+  .input{
+      text-align: left;
+      width: auto;
+      font-size: 0.9em;
+      justify-content: center;
+      align-items: center;
+  }
+  input{
+      font-size: 0.9rem;
+      height: 1.5rem;
+      width: 70vw;
+  }
+  .button,
+  .log-in{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0px;
+  }
+  button {
+      margin-bottom: 0px;
+      width: 60vw;
+      padding: 10px 5px;
+  }
+
+}
