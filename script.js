@@ -1,4 +1,6 @@
 const form = document.querySelector('form');
+const username = document.getElementById('name');
+const nameError = document.getElementById('nameError');
 const email = document.getElementById('email');
 const emailError = document.getElementById('emailError');
 const zip = document.getElementById('zip');
@@ -9,6 +11,14 @@ const password = document.getElementById('password');
 const passwordError = document.getElementById('passwordError');
 const confirmPassword = document.getElementById('confirmPassword');
 const confirmPasswordError = document.getElementById('confirmPasswordError');
+
+function showUsernameError() {
+  if (username.validity.valueMissing) {
+    nameError.textContent = 'You need to enter your name.';
+  }
+
+  nameError.className = 'error active';
+}
 
 function showZIPError() {
   if (zip.validity.valueMissing) {
@@ -75,6 +85,10 @@ function validateInput(input, error, validationFunction) {
   }
 }
 
+username.addEventListener('input', () => {
+  validateInput(username, nameError, showUsernameError);
+});
+
 zip.addEventListener('input', () => {
   validateInput(zip, zipError, showZIPError);
 });
@@ -103,18 +117,21 @@ confirmPassword.addEventListener('input', () => {
 function finalValidityCheck(input, errorFunction) {
   if (!input.validity.valid) {
     errorFunction();
+    return false;
   }
+  return true;
 }
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
+  const nameValid = finalValidityCheck(username, showUsernameError);
   const zipValid = finalValidityCheck(zip, showZIPError);
   const emailValid = finalValidityCheck(email, showEmailError);
   const phoneValid = finalValidityCheck(phone, showPhoneError);
   const passwordValid = finalValidityCheck(password, showPasswordError);
 
-  if (!zipValid || !emailValid || !phoneValid || !passwordValid) {
+  if (!nameValid || !zipValid || !emailValid || !phoneValid || !passwordValid) {
     return;
   }
 
